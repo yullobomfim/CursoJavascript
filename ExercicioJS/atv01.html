@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Multas</title>
+</head>
+
+<body>
+    <h1>Corra Aqui e Receba a Sua Multa</h1>
+    Selecione a sua Velocidade: <input type="number" id="txt1" name="txt1"> Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var txt1 = window.document.querySelector('input#txt1')
+            var res = window.document.querySelector('div#res')
+            var vel = Number(txt1.value)
+            res.innerHTML = `<p> A Sua Velocidade foi de ${vel} Km/h</p>`
+            if (vel> 80 ) {
+                res.innerHTML += `<p> Voce Ultrapassou o limite de velocidade e Ganhou uma Linda Multa</p>`
+            }else{
+                res.innerHTML += `<p> Muito Devagar!!!! Acelere mais para receber a sua Multa</p>`
+            }
+            res.innerHTML += `<p> Apertem os cintos !</p>`
+        }
+
+    </script>
+</body>
+
+</html>
